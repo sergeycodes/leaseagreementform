@@ -53,18 +53,16 @@ h2 {
     padding: 1.5rem;
 }
 
-@media (max-width: 400px) {
-    #option-box {
-        grid-template-columns: repeat(1,1fr);
-    }
-}
-
-
 #option-box > * {
     
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(245, 245, 245);
     height: 200px;
     width: 200px;
@@ -76,9 +74,23 @@ h2 {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+.card:focus-within {
+    border: 20px solid green;
+}
+
+.card > * {
+    
+}
+
+.images {
+    height: 125px;
+    align-items: center;
+}
+
 .card-btn {
-   width: 200px;
-   height: 40px;
+    display: flex;
+    width: 200px;
+    height: 40px;
 }
 
 .continue-btn {
@@ -95,6 +107,26 @@ h2 {
 .continue-btn:hover {
     background-color: #82A284;
     box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
+}
+
+
+@media (max-width: 400px) {
+    #option-box {
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .card {
+        height: 100px;
+        width: 100px;
+    }
+
+    .images {
+        height: 70px;
+    }
+
+    .card-btn {
+        justify-content: center;
+    }
 }
 
 #loading-bar {
@@ -124,14 +156,24 @@ h2 {
 }
 
 .bar-holder {
-    border: 1px solid red;
     display: flex;
     justify-content: center;
+    left: 20%;
     
+}
+
+.bar {
+    width: 800px;
+    background-color: #334257;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
+
 }
 
 #myBar {
     height: 24px;
-    width: 1%;
-    background-color: green;
+    width: 5%;
+    background-color: #476072;
+    border-end-end-radius: 5px;
+    border-start-end-radius: 5px;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.2);
 }
