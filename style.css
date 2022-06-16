@@ -9,12 +9,14 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
 body {
     background-color: rgb(245, 245, 245);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    color: #111;
 }
 
 header {
@@ -35,7 +37,19 @@ h2 {
     font-weight: 100;
 }
 
+#question {
+    position: absolute;
+    display: flex;
+    height: 100px;
+    width: 100%;
+    top: 65px;
+    align-items: center;
+    justify-content: center;
+}
 
+#question h1 {
+    font-weight: 400;
+}
 
 #option-box {
     position: relative;
@@ -44,17 +58,14 @@ h2 {
     height: 650px;
     width: 600px;
     min-width: 300px;
-    display: grid;
+    /*display: grid;*/
+    display: none;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     justify-items: center;
     margin-inline: auto;
     gap: 1.5rem;
     padding: 1.5rem;
-}
-
-#option-box > * {
-    
 }
 
 .card {
@@ -72,14 +83,6 @@ h2 {
 
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.card:focus-within {
-    border: 20px solid green;
-}
-
-.card > * {
-    
 }
 
 .images {
@@ -176,4 +179,25 @@ h2 {
     border-end-end-radius: 5px;
     border-start-end-radius: 5px;
     box-shadow: 0 0 4px 0 rgba(0,0,0,0.2);
+}
+
+#lease {
+    position: relative;
+   
+    height: 650px;
+    width: 600px;
+    min-width: 300px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: left;
+    justify-items: left;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid red;
+}
+
+.hr-card {
+    width: 200px;
+    height: 75px;
+    background-color: rgb(220, 220, 220);
 }
