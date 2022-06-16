@@ -11,41 +11,57 @@
     <header>
         <h2 id="logo">Lease Agreement Form</h2>
     </header>
+    <div class="property">
+        <div class="question">
+            <h1 class="top-question">What property is being rented?</h1>
+        </div> 
+     
+        <main id="option-box">
+            <div class="card" id="home">
+                <img src="images/home.png" alt="" class="images">
+                <h3>Home</h3>
+            </div>
+            <div class="card" id="apartment">
+                <img src="images/apartment.png" alt="" class="images">
+                <h3>Apartment</h3>
+            </div>
+            <div class="card" id="condo">
+                <img src="images/condo.png" alt="" class="images">
+                <h3>Condo</h3>
+            </div>
+            <div class="card" id="room">
+                <img src="images/room.png" alt="" class="images">
+                <h3>Room</h3>
+            </div>
+            <div class="card-btn">
+                <button class="continue-btn">Continue</button>
+            </div>
+        </main>
+    </div>
+   
 
-    <div id="question">
-        <h1 id="top-question">What property is being rented?</h1>
-    </div> 
-
-    <main id="option-box">
-        <div class="card" id="home">
-            <img src="images/home.png" alt="" class="images">
-            <h3>Home</h3>
-        </div>
-        <div class="card" id="apartment">
-            <img src="images/apartment.png" alt="" class="images">
-            <h3>Apartment</h3>
-        </div>
-        <div class="card" id="condo">
-            <img src="#" alt="">
-            <h3>Condo</h3>
-        </div>
-        <div class="card" id="room">
-            <img src="#" alt="">
-            <h3>Room</h3>
-        </div>
-        <div class="card-btn">
-            <button class="continue-btn">Continue</button>
-        </div>
-    </main>
-
-    <main id="lease">
-        <div class="hr-card">Fixed Date</div>
-        <div class="hr-card">Monthly</div>
-        <div class="hr-card">Yearly</div>
-    </main>
-
-
-
+    <div class="leaseterm">
+        <div class="question">
+            <h1 class="second-question">What is the lease term?</h1>
+        </div> 
+        <main id="lease">
+            <div class="hr-card" id="fixed-date"> <img src="images/fixeddate.png" alt="" class="calender">
+                <h3>Fixed Date</h3>
+            </div>
+            <div class="hr-card" id="month"> <img src="images/month.png" alt="" class="calender">
+                <h3>Monthly</h3>
+            </div>
+            <div class="hr-card" id="year"> <img src="images/year.png" alt="" class="calender">
+                <h3>Yearly</h3>
+            </div>
+    
+            <div class="card-btn">
+                <button class="back-btn">Back</button>
+                <button class="continue-btn">Continue</button>
+            </div>
+        </main>
+    </div>
+    
     <div id="loading-bar">
         <div class="bar-holder">
             <div class="bar">
@@ -59,12 +75,6 @@
             <li>Download</li>
         </ul>
     </div>
-
-
-
-
-
-
 
     <script src="index.js"></script>
 </body>
