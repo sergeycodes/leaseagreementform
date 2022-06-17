@@ -42,22 +42,56 @@
 
     <div class="leaseterm">
         <div class="question">
-            <h1 class="second-question">What is the lease term?</h1>
+            <h1 class="second-question">Lease Term</h1>
         </div> 
         <main id="lease">
-            <div class="hr-card" id="fixed-date"> <img src="images/fixeddate.png" alt="" class="calender">
-                <h3>Fixed Date</h3>
+            <div class="content">
+                <div class="hr-card" id="fixed-date"> <img src="images/fixeddate.png" alt="" class="calender">
+                    <h3>Fixed Date</h3>
+                </div>
+                <div class="hr-card" id="month"> <img src="images/month.png" alt="" class="calender">
+                    <h3>Monthly</h3>
+                </div>
+                <div class="hr-card" id="year"> <img src="images/year.png" alt="" class="calender">
+                    <h3>Yearly</h3>
+                </div>
+                <div class="lease-question" id="leaselength">
+                    <h3>What is the lease term?</h3>
+                </div>
+                <div class="lease-date" id="start-date">
+                    <h4>Start Date:</h4>
+                    <input type="date">
+                </div>
+                <div class="lease-date" id="end-date"> 
+                    <h4>End Date:</h4>
+                    <input type="date">
+                </div>
             </div>
-            <div class="hr-card" id="month"> <img src="images/month.png" alt="" class="calender">
-                <h3>Monthly</h3>
-            </div>
-            <div class="hr-card" id="year"> <img src="images/year.png" alt="" class="calender">
-                <h3>Yearly</h3>
-            </div>
+
     
-            <div class="card-btn">
+            <div class="lease-btn">
                 <button class="back-btn">Back</button>
-                <button class="continue-btn">Continue</button>
+                <button class="continue-btn" id="continue-two">Continue</button>
+            </div>
+        </main>
+    </div>
+
+    <div class="property-details">
+        <main class="details">
+            <div class="container">
+                <h1>Property Address</h1>
+
+                <h3>Where is the Property Located?</h3>
+                <div class="inputBox">
+                    <input type="address" name ="" required="required" id="address">
+                    <span>Street Adress:</span>
+                    <h5>Street, City, ZIP Code</h5>
+                </div>
+            </div>
+            
+            <div class="property-btn">
+                <button class="back-btn">Back</button>
+                <button class="continue-btn" id="continue-two">Continue</button>
             </div>
         </main>
     </div>
