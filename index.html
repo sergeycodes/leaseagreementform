@@ -76,7 +76,7 @@
         </main>
     </div>
 
-    <div class="property-details">
+    <div class="property-details" style="display: none;">
         <main class="details">
             <div class="container">
                 <h1>Property Address</h1>
@@ -85,15 +85,40 @@
                 <div class="inputBox">
                     <input type="address" name ="" required="required" id="address">
                     <span>Street Adress:</span>
-                    <h5>Street, City, ZIP Code</h5>
+                    <h5>Street, City, State ZIP Code</h5>
                 </div>
             </div>
             
             <div class="property-btn">
                 <button class="back-btn">Back</button>
-                <button class="continue-btn" id="continue-two">Continue</button>
+                <button class="continue-btn" id="continue-three">Continue</button>
             </div>
         </main>
+    </div>
+
+    <div class="landlord-details">
+        <div class="details">
+            <div class="container">
+                <h1>Landlord Information</h1>
+                <main class="landlord-box">
+                    <div class="l-question"><h3>Who is the landlord?</h3></div>
+                    <div class="hr-card" id="individual"><img src="images/individual.png" class="images"><h3>Individual</h3></div>
+                    <div class="hr-card" id="corporation"><img src="images/office-building.png" class="images"><h3>Corporation</h3></div>
+                    <div class="inputBox">
+                        <input type="address" name ="" required="required" id="address">
+                            <span>Full Name:</span>
+                        <input type="phone" required="required">
+                            <span>Phone:</span>
+                        <input type="email" required="required">
+                            <span>Email:</span>
+                    </div>
+                    <div class="property-btn">
+                        <button class="land-back-btn">Back</button>
+                        <button class="continue-btn" id="">Continue</button>
+                    </div>
+                </main>
+            </div>
+        </div>
     </div>
     
     <div id="loading-bar">

@@ -393,3 +393,70 @@ h2 {
     margin-top: 100px;
     justify-content: space-between;
 }
+
+/*landlord css*/
+
+.landlord-details .details .container  {
+   margin-top: -50px;
+}
+
+
+
+.landlord-box {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 400px;
+    height: 600px;
+    justify-items: left;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin-top: -30px;
+}
+
+.landlord-box .hr-card {
+    width: 250px;
+    height: 90px;
+}
+
+.landlord-box .hr-card h3 {
+    position: relative;
+    top: 25px;
+}
+
+.landlord-box .l-question {
+    position: relative;
+    height: 20px;
+}
+
+.landlord-box .inputBox {
+    height: 10px;
+}
+
+.landlord-box .inputBox input {
+    width: 250px;
+}
+
+.landlord-box .inputBox span {
+    position: absolute;
+    left: 1.5rem;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
+
+.land-back-btn {
+    background-color: rgb(220, 220, 220);
+    color: #413F42;
+    width: 75px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
