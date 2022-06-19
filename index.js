@@ -116,7 +116,7 @@ const continueTwoBtn = document.querySelector('#continue-two')
 
 const individual = document.querySelector('#individual')
 const corporation = document.querySelector('#corporation')
-const landBackBtn = document.querySelector('#land-back-btn') 
+const landBackBtn = document.querySelector('.land-back-btn') 
 landBackBtn.addEventListener('click', backButton)
 
 individual.addEventListener('click', individualBorderBox)
@@ -129,10 +129,12 @@ function individualBorderBox() {
     individual.style.border = "4px solid green"
     corporation.style.border = "none"
     selectedLandlord = "individual"
+    console.log("individual")
 }
 
 function corporationBorderBox() {
     individual.style.border = "none"
     corporation.style.border = "4px solid green"
     selectedLandlord = "corporation"
+    console.log("corporation")
 }
