@@ -636,16 +636,13 @@ h2 {
 }
 
 .choose-day {
+    position: relative;
     display: none;
 }
 
 .choose-day .inputBox input {
     background-color: rgb(245, 245, 245);
     width: 340px;
-}
-
-.choose-day .inputBox span {
-    left: 545px;
 }
 
 .day-payment {
