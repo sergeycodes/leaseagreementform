@@ -129,12 +129,126 @@ function individualBorderBox() {
     individual.style.border = "4px solid green"
     corporation.style.border = "none"
     selectedLandlord = "individual"
-    console.log("individual")
 }
 
 function corporationBorderBox() {
     individual.style.border = "none"
     corporation.style.border = "4px solid green"
     selectedLandlord = "corporation"
-    console.log("corporation")
+}
+
+//tenant js
+
+const tenantTwo = document.querySelector('#tenant-two')
+const addTenantEl = document.querySelector('.add-tenant')
+const firstTenant = document.querySelector('#first-tenant')
+const secondTenant = document.querySelector('#second-tenant')
+addTenantEl.addEventListener('click', addTenant)
+
+function addTenant() {
+    firstTenant.innerHTML = "First Tenant"
+    tenantTwo.style.display = "grid"
+    secondTenant.innerHTML = "Second Tenant"
+    addTenantEl.style.display = "none"
+}
+
+//rent js
+
+const rentYes = document.querySelector('#rent-yes')
+const rentNo = document.querySelector('#rent-no')
+rentYes.addEventListener('click', rentYesBorderBox)
+rentNo.addEventListener('click', rentNoBorderBox)
+const monthlyRent = document.querySelector('.monthly-rent')
+const rentButton = document.querySelector('.button')
+const dayRent = document.querySelector('.day-payment')
+
+const weeklyRent = document.querySelector('.weekly-container')
+const weekly = document.querySelector('#weekly')
+const biweekly = document.querySelector('#bi-weekly')
+const annually = document.querySelector('#annually')
+weekly.addEventListener('click', weeklyBorderBox)
+biweekly.addEventListener('click', biweeklyBorderBox)
+annually.addEventListener('click', annuallyBorderBox)
+const example = document.querySelector('.example')
+
+const weeklyAmount = document.querySelector('#rent-payment-input')
+const weeklyDay = document.querySelector('#rent-day-input')
+
+rentYes.style.border = "2px solid green"
+
+function rentYesBorderBox() {
+    rentYes.style.border = "2px solid green"
+    rentNo.style.border = "none"
+    monthlyRent.style.display = "grid"
+    weeklyRent.style.display = "none"
+    dayRent.style.display = "grid"
+}
+
+function rentNoBorderBox() {
+    rentYes.style.border = "none"
+    rentNo.style.border = "2px solid green"
+    monthlyRent.style.display = "none"
+    weeklyRent.style.display = "grid"
+    dayRent.style.display = "none"
+}
+
+const firstDay = document.querySelector('#first-day')
+const fifteenthDay = document.querySelector('#fifteenth-day')
+const otherDay = document.querySelector('#other-day')
+const chooseDay = document.querySelector('.choose-day')
+
+firstDay.style.border = "4px solid green"
+
+firstDay.addEventListener('click', firstDayBorderBox)
+fifteenthDay.addEventListener('click', fifteenthDayBorderBox)
+otherDay.addEventListener('click', otherDayBorderBox)
+
+function firstDayBorderBox() {
+    firstDay.style.border = "4px solid green"
+    fifteenthDay.style.border = "none"
+    otherDay.style.border = "none"
+    chooseDay.style.display = "none"
+}
+
+function fifteenthDayBorderBox() {
+    firstDay.style.border = "none"
+    fifteenthDay.style.border = "4px solid green"
+    otherDay.style.border = "none"
+    chooseDay.style.display = "none"
+}
+
+function otherDayBorderBox() {
+    firstDay.style.border = "none"
+    fifteenthDay.style.border = "none"
+    otherDay.style.border = "4px solid green"
+    chooseDay.style.display = "grid"
+}
+
+weekly.style.border = "4px solid green"
+
+function weeklyBorderBox() {
+    weekly.style.border = "4px solid green"
+    biweekly.style.border = "none"
+    annually.style.border = "none"
+    weeklyAmount.innerHTML = "Weekly Rent Payment:"
+    weeklyDay.innerHTML = "What day of the week will payments be made?"
+    example.innerHTML = "e.g. Sunday"
+}
+
+function biweeklyBorderBox() {
+    weekly.style.border = "none"
+    biweekly.style.border = "4px solid green"
+    annually.style.border = "none"
+    weeklyAmount.innerHTML = "Bi-Weekly Rent Payment:"
+    weeklyDay.innerHTML = "What day of the week will payments be made?"
+    example.innerHTML = "e.g. Sunday"
+}
+
+function annuallyBorderBox() {
+    weekly.style.border = "none"
+    biweekly.style.border = "none"
+    annually.style.border = "4px solid green"
+    weeklyAmount.innerHTML = "Yearly Rent Payment:"
+    weeklyDay.innerHTML = "What day of the year will payments be made?"
+    example.innerHTML = "e.g. January 1st"
 }

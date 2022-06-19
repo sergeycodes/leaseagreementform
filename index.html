@@ -121,14 +121,14 @@
         </div>
     </div>
 
-    <div class="tenant-details">
+    <div class="tenant-details" style="display: none;">
         <div class="details">
             <div class="container">
                 <h1>Tenant Information</h1>
                 <main class="tenant-box">
                     <div class="tenant">
-                        <div> 
-                        <h3>Tenant</h3>
+                        <div class="tenant-one"> 
+                            <h3 id="first-tenant">Tenant</h3>
                         </div>
                         <div class="inputBox">  
                             <input type="address" name ="" required="required">
@@ -143,11 +143,115 @@
                             <span class="right">Email:</span>
                         </div>
                     </div>
+
+                    <div class="tenant" id="tenant-two">
+                        <div class="tenant-one"> 
+                            <h3 id="second-tenant">Tenant</h3>
+                        </div>
+                        <div class="inputBox">  
+                            <input type="address" name ="" required="required">
+                            <span class="left">Full Name:</span>
+                        </div>
+                        <div class="inputBox">  
+                            <input type="address" name ="" required="required">
+                            <span class="right">Phone:</span>
+                        </div>
+                        <div class="inputBox">  
+                            <input type="address" name ="" required="required">
+                            <span class="right">Email:</span>
+                        </div>
+                    </div>
+
+                    <button class="add-tenant"><a href="#"><h4>+ Add another Tenant</h4></a></button>
+
                     <div class="property-btn">
                         <button class="land-back-btn">Back</button>
                         <button class="continue-btn" id="">Continue</button>
                     </div>
                 </main>
+            </div>
+        </div>
+    </div>
+
+    <div class="rent-details">
+        <div class="rent-box">
+            <h1>Rent</h1>
+            <div class="pay-monthly">
+                <div class="button">
+                    <h3>Will the tenant pay rent monthly?</h3>
+                    <div class="yes-no">
+                        <button id="rent-yes">YES</button><button id="rent-no">NO</button>
+                    </div>
+                </div>
+                <div class="monthly-rent">
+                    <h3>How much will the tenant pay per month?</h3>
+                    <div class="inputBox">  
+                        <h3>$</h3><input type="address" name ="" required="required">
+                        <span class="right">Monthly Rent Payment:</span>
+                    </div>
+                </div>
+            </div>
+            <div class="day-payment">
+                <h3>What day of the month will rent be paid?</h3>
+                <div class="hr-card" id="first-day">
+                    <img src="images/firstday.png" alt="" class="images">
+                    <h3>First Day</h3>
+                </div>
+                <div class="hr-card" id="fifteenth-day">
+                    <img src="images/number-15.png" alt="" class="images">
+                    <h3>Fifteenth day</h3>
+                </div>
+                <div class="rent-other">
+                    <div class="hr-card" id="other-day">
+                        <img src="images/calendar.png" alt="" class="images">
+                        <h3>Other</h3>
+                    </div>
+                    <div class="choose-day">
+                        <div class="inputBox">  
+                            <input type="address" name ="" required="required">
+                            <span class="right">What day of the month will payments be made?</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="weekly-container">
+                <h3>How often will the tenant pay rent?</h3>
+                <div class="weekly-payment">
+            <div class="tenant-rent-week">
+                    <div class="hr-card" id="weekly">
+                        <img src="images/7-days.png" alt="" class="images">
+                        <h3>Weekly</h3>
+                    </div>
+                    <div class="hr-card" id="bi-weekly">
+                        <img src="images/biweekly.png" alt="" class="images">
+                        <h3>Bi-weekly</h3>
+                    </div>
+                    <div class="hr-card" id="annually">
+                        <img src="images/annually.png" alt="" class="images">
+                        <h3>Annually</h3>
+                    </div>
+                </div>
+                <div class="weekly-rent">
+                    <div>
+                        <h3>How much will the tenant pay per week?</h3>
+                    </div>
+                    <div class="inputBox">  
+                        <h3>$</h3><input type="address" name ="" required="required">
+                        <span class="right" id="rent-payment-input">Weekly Rent Payment:</span>
+                    </div>
+                    <div class="inputBox">  
+                        <input type="address" name ="" required="required">
+                        <span class="right" id="rent-day-input">What day of the week will payments be made?</span>
+                        <h5 class="example">e.g. Sunday</h5>
+                    </div> 
+                </div>
+                </div>
+                
+            </div>
+
+            <div class="property-btn">
+                <button class="land-back-btn">Back</button>
+                <button class="continue-btn" id="">Continue</button>
             </div>
         </div>
     </div>
