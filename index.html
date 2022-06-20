@@ -11,6 +11,7 @@
     <header >
         <h2 id="logo">Lease Agreement Form</h2>
     </header>
+
     <div class="property">
         <div class="question">
             <h1 class="top-question">What property is being rented?</h1>
@@ -38,7 +39,7 @@
             </div>
         </main>
     </div>
-   
+
     <div class="leaseterm">
         <div class="question">
             <h1 class="second-question">Lease Term</h1>
@@ -70,12 +71,12 @@
     
             <div class="lease-btn">
                 <button class="back-btn">Back</button>
-                <button class="continue-btn" id="continue-two">Continue</button>
+                <button class="continue-btn" id="lease-continue-btn">Continue</button>
             </div>
         </main>
     </div>
 
-    <div class="property-details" style="display: none;">
+    <div class="property-details">
         <main class="details">
             <div class="container">
                 <h1>Property Address</h1>
@@ -89,13 +90,13 @@
             </div>
             
             <div class="property-btn">
-                <button class="back-btn">Back</button>
-                <button class="continue-btn" id="continue-three">Continue</button>
+                <button class="back-btn" id="property-back-btn">Back</button>
+                <button class="continue-btn" id="property-continue-btn">Continue</button>
             </div>
         </main>
     </div>
 
-    <div class="landlord-details" style="display: none;">
+    <div class="landlord-details">
         <div class="details">
             <div class="container">
                 <h1>Landlord Information</h1>
@@ -112,15 +113,15 @@
                             <span>Email:</span>
                     </div>
                     <div class="property-btn">
-                        <button class="land-back-btn">Back</button>
-                        <button class="continue-btn" id="">Continue</button>
+                        <button class="back-btn" id="land-back-btn">Back</button>
+                        <button class="continue-btn" id="land-continue-btn">Continue</button>
                     </div>
                 </main>
             </div>
         </div>
     </div>
 
-    <div class="tenant-details" style="display: none;">
+    <div class="tenant-details">
         <div class="details">
             <div class="container">
                 <h1>Tenant Information</h1>
@@ -162,10 +163,10 @@
                     </div>
 
                     <button class="add-tenant"><a href="#"><h4>+ Add another Tenant</h4></a></button>
-
+                    <button class="add-tenant" id="delete-tenant"><a href="#"><h4>- Remove Tenant</h4></a></button>
                     <div class="property-btn">
-                        <button class="land-back-btn">Back</button>
-                        <button class="continue-btn" id="">Continue</button>
+                        <button class="back-btn" id="tenant-back-btn">Back</button>
+                        <button class="continue-btn" id="tenant-continue-btn">Continue</button>
                     </div>
                 </main>
             </div>
@@ -249,8 +250,8 @@
             </div>
 
             <div class="property-btn">
-                <button class="land-back-btn">Back</button>
-                <button class="continue-btn" id="">Continue</button>
+                <button class="back-btn" id="rent-back-btn">Back</button>
+                <button class="continue-btn" id="rent-continue-btn">Continue</button>
             </div>
         </div>
     </div>
@@ -268,8 +269,8 @@
         </div>
 
         <div class="property-btn">
-            <button class="land-back-btn">Back</button>
-            <button class="continue-btn" id="">Continue</button>
+            <button class="back-btn" id="sign-back-btn">Back</button>
+            <button class="continue-btn" id="sign-continue-btn">Continue</button>
         </div>
         
     </div>
@@ -321,8 +322,8 @@
             </div>
         </div>
 
-        <div class="property-btn">
-            <button class="land-back-btn">Back</button>
+        <div class="pdf-btn">
+            <button class="back-btn" id="pdf-back-btn">Back</button>
         </div>
         
     </div>
@@ -334,10 +335,11 @@
             </div>
         </div>
         <ul>
-            <li>Property</li>
-            <li>Lease Term</li>
-            <li>Details</li>
-            <li>Download</li>
+            <li><button id="list-property">Property</button></li>
+            <li><button id="list-lease">Lease Term</button></li>
+            <li><button id="list-details">Details</button></li>
+            <li><button id="list-sign">Sign</button></li>
+            <li><button id="list-download">Download</button></li>
         </ul>
     </div>
 
@@ -358,6 +360,6 @@
           console.info('Text:', e.text);
           console.info('Trigger:', e.trigger);
         });
-      </script>
+    </script>
 </body>
 </html>

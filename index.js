@@ -5,18 +5,15 @@ const condo = document.getElementById('condo')
 const room = document.getElementById('room')
 const continueBtn = document.querySelector('.continue-btn')
 continueBtn.addEventListener('click', firstContinue)
-const leaseEl = document.querySelector('.leaseterm')
 
 
+const elem = document.getElementById("myBar")
+elem.style.transition = "2s"
 
-function firstContinue() {
-    
-        var elem = document.getElementById("myBar")
-        elem.style.width = 35 + '%'
+function firstContinue() {       
+        elem.style.width = 25 + '%'
         propertyEl.style.display = "none" 
-        leaseEl.style.display = "flex"
-    
-   
+        leaseEl.style.display = "grid"
 }
 
 home.addEventListener('click', homeBorderBox)
@@ -61,7 +58,7 @@ function roomBorderBox() {
 
 
 //lease js
-
+const leaseEl = document.querySelector('.leaseterm')
 const fixedDate = document.querySelector('#fixed-date')
 const month = document.querySelector('#month') 
 const year = document.querySelector('#year') 
@@ -110,14 +107,19 @@ function backButton() {
     elem.style.width = 5 + '%'
 }
 
-const continueTwoBtn = document.querySelector('#continue-two')
+const leaseContinueBtn = document.querySelector('#lease-continue-btn')
+leaseContinueBtn.addEventListener('click', leaseContinue)
+
+function leaseContinue() {
+    leaseEl.style.display = "none"
+    propertyDetails.style.display = "grid"
+    elem.style.width = 50 + '%'
+}
 
 //details js
 
 const individual = document.querySelector('#individual')
 const corporation = document.querySelector('#corporation')
-const landBackBtn = document.querySelector('.land-back-btn') 
-landBackBtn.addEventListener('click', backButton)
 
 individual.addEventListener('click', individualBorderBox)
 corporation.addEventListener('click', corporationBorderBox)
@@ -136,24 +138,90 @@ function corporationBorderBox() {
     corporation.style.border = "4px solid green"
     selectedLandlord = "corporation"
 }
+//property details js
+const propertyDetails = document.querySelector('.property-details')
+const propertyBackBtn = document.querySelector('#property-back-btn')
+const propertyContinueBtn = document.querySelector('#property-continue-btn')
+propertyBackBtn.addEventListener('click', propertyBack)
+propertyContinueBtn.addEventListener('click', propertyContinue)
+
+function propertyBack() {
+    leaseEl.style.display = "grid"
+    propertyDetails.style.display = "none"
+    elem.style.width = 25 + '%'
+}
+
+function propertyContinue() {
+    propertyDetails.style.display = "none"
+    landlordDetails.style.display = "grid"
+    elem.style.width = 55 + '%'
+}
+
+//landlord details js
+const landlordDetails = document.querySelector('.landlord-details')
+const landlordBackBtn = document.querySelector('#land-back-btn')
+const landlordContinueBtn = document.querySelector('#land-continue-btn')
+landlordBackBtn.addEventListener('click', landlordBack)
+landlordContinueBtn.addEventListener('click', landlordContinue)
+
+function landlordBack() {
+    propertyDetails.style.display = "grid"
+    landlordDetails.style.display = "none"
+    elem.style.width = 52.5 + '%'
+}
+
+function landlordContinue() {
+    landlordDetails.style.display = "none"
+    tenantDetails.style.display = "grid"
+    elem.style.width = 62.5 + '%'
+}
 
 //tenant js
-
+const tenantDetails = document.querySelector('.tenant-details')
 const tenantTwo = document.querySelector('#tenant-two')
 const addTenantEl = document.querySelector('.add-tenant')
+const deleteTenantEl = document.querySelector('#delete-tenant')
 const firstTenant = document.querySelector('#first-tenant')
 const secondTenant = document.querySelector('#second-tenant')
 addTenantEl.addEventListener('click', addTenant)
+deleteTenantEl.addEventListener('click', deleteTenant)
 
 function addTenant() {
     firstTenant.innerHTML = "First Tenant"
     tenantTwo.style.display = "grid"
     secondTenant.innerHTML = "Second Tenant"
     addTenantEl.style.display = "none"
+    deleteTenantEl.style.display = "grid"
+}
+
+function deleteTenant() {
+    firstTenant.innerHTML = "Tenant"
+    tenantTwo.style.display = "none"
+    addTenantEl.style.display = "grid"
+    deleteTenantEl.style.display = "none"
+}
+
+const tenantBackBtn = document.querySelector('#tenant-back-btn')
+const tenantContinueBtn = document.querySelector('#tenant-continue-btn')
+tenantBackBtn.addEventListener('click', tenantBack)
+tenantContinueBtn.addEventListener('click', tenantContinue)
+
+
+
+function tenantBack() {
+    landlordDetails.style.display = "grid"
+    tenantDetails.style.display = "none"
+    elem.style.width = 57.5 + '%'
+}
+
+function tenantContinue() {
+    tenantDetails.style.display = "none"
+    rentDetails.style.display = "grid"
+    elem.style.width = 67.5 + '%'
 }
 
 //rent js
-
+const rentDetails = document.querySelector('.rent-details')
 const rentYes = document.querySelector('#rent-yes')
 const rentNo = document.querySelector('#rent-no')
 rentYes.addEventListener('click', rentYesBorderBox)
@@ -253,8 +321,26 @@ function annuallyBorderBox() {
     example.innerHTML = "e.g. January 1st"
 }
 
-//sign js
+const rentBackBtn = document.querySelector('#rent-back-btn')
+const rentContinueBtn = document.querySelector('#rent-continue-btn')
+rentBackBtn.addEventListener('click', rentBack)
+rentContinueBtn.addEventListener('click', rentContinue)
 
+function rentBack() {
+    rentDetails.style.display = "none"
+    tenantDetails.style.display = "grid"
+    elem.style.width = 62.5 + '%'
+}
+
+function rentContinue() {
+    rentDetails.style.display = "none"
+    signDetails.style.display = "grid"
+    elem.style.width = 75 + '%'
+
+}
+
+//sign js
+const signDetails = document.querySelector('.sign-details')
 const unsure = document.querySelector('#unsure')
 const fixeddate = document.querySelector('#fixeddate')
 const fixeddateDate = document.querySelector('#fixeddate-date')
@@ -275,7 +361,25 @@ function fixeddateBorderBox() {
     fixeddateDate.style.display = "grid"
 }
 
+const signBackBtn = document.querySelector('#sign-back-btn')
+const signContinueBtn = document.querySelector('#sign-continue-btn')
+signBackBtn.addEventListener('click', signBack)
+signContinueBtn.addEventListener('click', signContinue)
+
+function signBack() {
+    signDetails.style.display = "none"
+    rentDetails.style.display = "grid"
+    elem.style.width = 75 + '%'
+}
+
+function signContinue() {
+    signDetails.style.display = "none"
+    pdfDetails.style.display = "grid"
+    elem.style.width = 100 + '%'
+}
+
 //pdf js
+const pdfDetails = document.querySelector('.pdf-download')
 const dlPdf = document.querySelector('#dl-pdf')
 dlPdf.addEventListener('click', downloadPdf)
 
@@ -289,4 +393,94 @@ function downloadPdf() {
 const copyPdf = document.querySelector('#copy-pdf')
 copyPdf.addEventListener('click', clipboardPdf)
 function clipboardPdf() {
+}
+
+//buttons
+
+const pdfBackBtn = document.querySelector('#pdf-back-btn')
+pdfBackBtn.addEventListener('click', pdfBack)
+
+function pdfBack() {
+    pdfDetails.style.display = "none"
+    signDetails.style.display = "grid"
+    elem.style.width = 72.5 + '%'
+}
+
+//list buttons 
+
+const listPropertyBtn = document.querySelector('#list-property')
+const listLeaseBtn = document.querySelector('#list-lease')
+const listDetailsBtn = document.querySelector('#list-details')
+const listSignBtn = document.querySelector('#list-sign')
+const listPdfBtn = document.querySelector('#list-download')
+
+listPropertyBtn.addEventListener('click', listProperty)
+listLeaseBtn.addEventListener('click', listLease)
+listDetailsBtn.addEventListener('click', listDetails)
+listSignBtn.addEventListener('click', listSign)
+listPdfBtn.addEventListener('click', listPdf)
+
+function listProperty() {
+    propertyEl.style.display = "grid"
+    leaseEl.style.display = "none"
+    propertyDetails.style.display = "none" 
+    landlordDetails.style.display = "none"
+    tenantDetails.style.display = "none"
+    rentDetails.style.display = "none"
+    signDetails.style.display = "none"
+    pdfDetails.style.display = "none"
+
+    elem.style.width = 5 + '%'
+}
+
+function listLease() {
+    propertyEl.style.display = "none"
+    leaseEl.style.display = "grid"
+    propertyDetails.style.display = "none" 
+    landlordDetails.style.display = "none"
+    tenantDetails.style.display = "none"
+    rentDetails.style.display = "none"
+    signDetails.style.display = "none"
+    pdfDetails.style.display = "none"
+
+    elem.style.width = 25 + '%'
+}
+
+function listDetails() {
+    propertyEl.style.display = "none"
+    leaseEl.style.display = "none"
+    propertyDetails.style.display = "grid" 
+    landlordDetails.style.display = "none"
+    tenantDetails.style.display = "none"
+    rentDetails.style.display = "none"
+    signDetails.style.display = "none"
+    pdfDetails.style.display = "none"
+
+    elem.style.width = 50 + '%'
+}
+
+function listSign() {
+    propertyEl.style.display = "none"
+    leaseEl.style.display = "none"
+    propertyDetails.style.display = "none" 
+    landlordDetails.style.display = "none"
+    tenantDetails.style.display = "none"
+    rentDetails.style.display = "none"
+    signDetails.style.display = "grid"
+    pdfDetails.style.display = "none"
+
+    elem.style.width = 75 + '%'
+}
+
+function listPdf() {
+    propertyEl.style.display = "none"
+    leaseEl.style.display = "none"
+    propertyDetails.style.display = "none" 
+    landlordDetails.style.display = "none"
+    tenantDetails.style.display = "none"
+    rentDetails.style.display = "none"
+    signDetails.style.display = "none"
+    pdfDetails.style.display = "grid"
+
+    elem.style.width = 100 + '%'
 }

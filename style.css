@@ -38,7 +38,7 @@ h2 {
 }
 
 .property {
-    display: none;
+    display: grid;
     width: 100%;
     height: 100%;
 }
@@ -145,7 +145,7 @@ h2 {
 
 #loading-bar ul {
     display: flex;
-    gap: 10rem;
+    gap: 7rem;
     height: 60px;
     list-style: none;
     justify-content: center;
@@ -155,6 +155,19 @@ h2 {
 #loading-bar ul li {
     padding: 5px;
 
+}
+
+#loading-bar ul li button {
+    width: 75px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #476072;
+    color: #969fa5;
+}
+
+#loading-bar ul li button:hover {
+    background-color: #4d6d83;
 }
 
 .bar-holder {
@@ -168,7 +181,6 @@ h2 {
     width: 800px;
     background-color: #334257;
     box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
-
 }
 
 #myBar {
@@ -318,7 +330,8 @@ h2 {
 /*details css*/
 
 .property-details {
-    display: grid;
+    /*display: grid;*/
+    display: none;
     width: 100%;
     justify-content: center;
 }
@@ -394,6 +407,11 @@ h2 {
 
 /*landlord css*/
 
+.landlord-details {
+    /*display: grid;*/
+    display: none;
+}
+
 .landlord-details .details .container  {
    margin-top: -50px;
 }
@@ -448,7 +466,7 @@ h2 {
     color: #666;
 }
 
-.land-back-btn {
+.back-btn {
     background-color: rgb(220, 220, 220);
     color: #413F42;
     width: 75px;
@@ -460,6 +478,11 @@ h2 {
 }
 
 /*tenant info*/
+
+.tenant-details {
+    /*display: grid;*/
+    display: none;
+}
 
 .tenant {
     display: grid;
@@ -540,6 +563,10 @@ h2 {
 
 .add-tenant a h4:hover {
     letter-spacing: 2px;
+}
+
+#delete-tenant {
+    display: none;
 }
 
 #tenant-two {
@@ -708,12 +735,14 @@ h2 {
 }
 
 .sign-details .sign {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
 }
 
 .sign-details .sign h2 {
     margin: 10px 0;
+    font-weight: 700;
 }
 .sign-details .sign h3 {
     margin: 10px 0;
@@ -739,7 +768,8 @@ h2 {
 }
 
 .pdf-download {
-    display: grid;
+    /*display: grid;*/
+    display: none;
     position: relative;
     top: -75px;
     height: 900px;
@@ -852,9 +882,17 @@ h2 {
     justify-content: space-between;
 }
 
-.pdf-download .property-btn {
+.pdf-download .pdf-btn {
     position: absolute;
     top: 700px;
     left: 200px;
 }
 
+.pdf-btn {
+    display: flex;
+    width: 250px;
+    height: 40px;
+    margin-top: 100px;
+    justify-content: space-between;
+    margin-left: 4px;
+}
