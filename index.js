@@ -483,4 +483,27 @@ function listPdf() {
     pdfDetails.style.display = "grid"
 
     elem.style.width = 100 + '%'
+
+    editPdf()
 }
+
+//pdf edit
+
+const propertySelected = document.querySelector('#selected-property')
+
+function editPdf() {
+    propertySelected.innerHTML = "Renting a " + selectedProperty + " for: "
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
