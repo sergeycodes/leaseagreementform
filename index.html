@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header >
         <h2 id="logo">Lease Agreement Form</h2>
     </header>
     <div class="property">
@@ -254,7 +254,79 @@
             </div>
         </div>
     </div>
+
+    <div class="sign-details">
+        <div class="sign">
+            <h2>Signing Details</h2>
+            <h3>When will the Lease be signed?</h3>
+            <div class="hr-card" id="unsure"><img src="images/calendar.png" alt="" class="images" ><h3>Unsure</h3></div>
+            <div class="hr-card" id="fixeddate"><img src="images/fixeddate.png" alt="" class="images"><h3>Fixed Date</h3></div>
+            <div class="inputBox" id="fixeddate-date">  
+            <input type="address" name ="" required="required">
+            <span class="right">Month, Day, Year</span>
+            </div>
+        </div>
+
+        <div class="property-btn">
+            <button class="land-back-btn">Back</button>
+            <button class="continue-btn" id="">Continue</button>
+        </div>
+        
+    </div>
     
+    <div class="pdf-download">
+        <div class="pdf-title">
+            <div class="pdf-button">
+                <button id="dl-pdf">Download as PDF</button><button class="btn" id="copy-pdf" data-clipboard-target=".pdf">Copy to Clipboard</button><div class="copied"><h5>Copied</h5></div>
+            </div>
+            
+        </div>
+        <div class="pdf" >
+            <div class="pdf-file">
+                <h1>Lease Agreement</h1>
+                <br>
+                <br>
+                <br>
+                <h2 id="landlord-info">Landlord Info:</h2>
+                <h3 id="landlord-name">First Last</h3>
+                <h3 id="landlord-street-address">Street Address</h3>
+                <h3 id="landlord-city-state">City, State ZIP</h3>
+                <h3 id="landlord-phone">Phone Number</h3>
+                <h3 id="landlord-email">Email</h3>
+                <br>
+                <h2 id="tenant-info">Tenant Info:</h2>
+                <h3 id="tenant-name">First Last</h3>
+                <h3 id="tenant-street-address">Street Address</h3>
+                <h3 id="tenant-city-state">City, State ZIP</h3>
+                <h3 id="tenant-phone">Phone Number</h3>
+                <h3 id="tenant-email">Email</h3>
+                <br>
+                <h2>Rent:</h2>
+                <h3>Renting a [Property] for:</h3>
+                <h3>First Tenant</h3>
+                <h3>Second Tenant</h3>
+                <br>
+                <h2>Period:</h2>
+                <h3>Period from: [date] - [date]</h3>
+                <h3>Amount: [amount] (includes utilities, water, and garbage)</h3>
+                <h3>Payment is due every [day] of the [time]</h3>
+                <br>
+                <div class="signiture">
+                    <h3>Landlord</h3><h3>______________________ [sign-date]</h3>
+                </div>
+                <br>
+                <div class="signiture">
+                    <h3>Tenant</h3><h3>______________________ [sign-date]</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="property-btn">
+            <button class="land-back-btn">Back</button>
+        </div>
+        
+    </div>
+
     <div id="loading-bar">
         <div class="bar-holder">
             <div class="bar">
@@ -270,5 +342,22 @@
     </div>
 
     <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
+    <script>
+        var clipboard = new ClipboardJS('.btn');
+  
+        clipboard.on('success', function (e) {
+          console.info('Action:', e.action);
+          console.info('Text:', e.text);
+          console.info('Trigger:', e.trigger);
+        });
+  
+        clipboard.on('error', function (e) {
+          console.info('Action:', e.action);
+          console.info('Text:', e.text);
+          console.info('Trigger:', e.trigger);
+        });
+      </script>
 </body>
 </html>

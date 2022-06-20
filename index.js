@@ -252,3 +252,41 @@ function annuallyBorderBox() {
     weeklyDay.innerHTML = "What day of the year will payments be made?"
     example.innerHTML = "e.g. January 1st"
 }
+
+//sign js
+
+const unsure = document.querySelector('#unsure')
+const fixeddate = document.querySelector('#fixeddate')
+const fixeddateDate = document.querySelector('#fixeddate-date')
+unsure.style.border = "4px solid green"
+
+unsure.addEventListener('click', unsureBorderBox)
+fixeddate.addEventListener('click', fixeddateBorderBox)
+
+function unsureBorderBox() {
+    unsure.style.border = "4px solid green"
+    fixeddate.style.border = "none"
+    fixeddateDate.style.display = "none"
+}
+
+function fixeddateBorderBox() {
+    fixeddate.style.border = "4px solid green"
+    unsure.style.border = "none"
+    fixeddateDate.style.display = "grid"
+}
+
+//pdf js
+const dlPdf = document.querySelector('#dl-pdf')
+dlPdf.addEventListener('click', downloadPdf)
+
+function downloadPdf() {
+    var element = document.querySelector('.pdf')
+    element.style.display = "block"
+    html2pdf().from(element).save()
+    console.log('downloaded')
+}
+
+const copyPdf = document.querySelector('#copy-pdf')
+copyPdf.addEventListener('click', clipboardPdf)
+function clipboardPdf() {
+}

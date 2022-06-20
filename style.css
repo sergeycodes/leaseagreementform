@@ -373,7 +373,8 @@ h2 {
 
 
 
-.inputBox input:focus ~ span {
+.inputBox input:focus ~ span,
+.inputBox input:valid ~ span  {
     color: rgb(55, 55, 55);
     font-size: 12px;
     transform: translateY(-20px);
@@ -553,7 +554,8 @@ h2 {
 /*Rent css*/
 
 .rent-details {
-    display: grid;
+   /* display: grid;*/
+   display: none;
     width: 100%;
     justify-content: center;
 }
@@ -697,3 +699,162 @@ h2 {
     left: 24px;
     opacity: 0.5;
 }
+
+.sign-details {
+    /*display: grid;*/
+    display: none;
+    width: 100%;
+    justify-content: center;
+}
+
+.sign-details .sign {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.sign-details .sign h2 {
+    margin: 10px 0;
+}
+.sign-details .sign h3 {
+    margin: 10px 0;
+}
+.sign-details .sign .hr-card {
+    margin: 10px 0;
+}
+
+.sign-details .sign .hr-card .images {
+    width: 60px;
+    height: 60px;
+}
+
+.sign-details .inputBox {
+    display: none;
+    position: relative;
+    margin-top: 10px;
+}
+
+.sign-details .inputBox input {
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0 2px 4px 0px rgba(0,0,0,0.2);
+}
+
+.pdf-download {
+    display: grid;
+    position: relative;
+    top: -75px;
+    height: 900px;
+}
+.pdf-download .pdf-title {
+    position: relative;
+    display: grid;
+    top: 125px;
+}
+.pdf-button {
+    position: absolute;
+    display: flex;
+    top: 2rem;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    width: 408px;
+    left: 204px;
+}
+
+.pdf-button button {
+    width: 150px;
+    height: 40px;
+    justify-items: center;
+    background-color: #3EC70B;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+}
+
+.pdf-button button:hover {
+    background-color: #40dd07;
+}
+
+#copy-pdf {
+    transition:500ms;
+}
+
+#copy-pdf:focus {
+    background-color: pink;
+}
+
+.copied {
+    opacity: 0;
+    position: absolute;
+    height: 30px;
+    width: 75px;
+    top: 5px;
+    right: -75px;
+    clip-path: polygon(25% 0, 100% 0, 100% 100%, 25% 100%, 0 50%);
+    background-color: gray;
+    text-align: right;
+}
+
+.copied h5 {
+    position: absolute;
+    right: 4px;
+    top: 7px;
+}
+
+@-webkit-keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.pdf-download .pdf-title h3 {
+    text-align: center;
+}
+
+.pdf-download .pdf {
+    position: relative;
+    display: block;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    width: 816px;
+    transform: scale(0.5);
+    top: -50px;
+}
+
+.pdf-file {
+    padding: 2rem 4rem 4rem;
+}
+
+.pdf-file br {
+    display: block;
+    content: "";
+    margin: 3rem 0;
+}
+
+.pdf-file h1 {
+    text-align: center;
+    font-size: 2.75rem;
+}
+
+.pdf-file h2 {
+    font-weight: 500;
+    font-size: 1.75rem;
+}
+
+.pdf-file h3 {
+    font-weight: 100;
+    font-size: 1.5rem;
+}
+
+.signiture {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pdf-download .property-btn {
+    position: absolute;
+    top: 700px;
+    left: 200px;
+}
+
