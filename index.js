@@ -369,7 +369,7 @@ signContinueBtn.addEventListener('click', signContinue)
 function signBack() {
     signDetails.style.display = "none"
     rentDetails.style.display = "grid"
-    elem.style.width = 75 + '%'
+    elem.style.width = 67.5 + '%'
 }
 
 function signContinue() {

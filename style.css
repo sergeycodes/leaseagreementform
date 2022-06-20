@@ -482,7 +482,14 @@ h2 {
 .tenant-details {
     /*display: grid;*/
     display: none;
+    grid-template-columns: repeat(1, 1fr);
 }
+
+.tenant-details .details {
+    margin-bottom: 0;
+}
+
+
 
 .tenant {
     display: grid;
