@@ -336,6 +336,10 @@ h2 {
     justify-content: center;
 }
 
+.property-details .inputBox input {
+    background-color: rgb(245, 245, 245);
+}
+
 .details {
     width: 700px;
     justify-content: center;
@@ -395,6 +399,7 @@ h2 {
 
 .inputBox h5 {
     font-weight: 100;
+    color: rgb(151, 148, 148);
 }
 
 .property-btn {
@@ -486,16 +491,21 @@ h2 {
 }
 
 .tenant-details .details {
+    position: relative;
     margin-bottom: 0;
+    top: -100px;
 }
 
-
+.tenant-details .tenant-box {
+    position: relative;
+    top: -25px;
+}
 
 .tenant {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 600px;
-    height: 200px;
+    height: 220px;
     gap: 1.5rem;
     padding: 1.5rem;
     background-color: #fff;
@@ -503,10 +513,13 @@ h2 {
     margin-top: -30px;
 }
 
-.tenant .tenant-one {
-    display: flex;
-    position: absolute;
-    width: 250px;
+#tenant-one {
+    margin-bottom: 25px;
+}
+
+.tenant-two {
+    display: none;
+    margin-top: 25px;
 }
 
 .tenant .inputBox input {
@@ -514,9 +527,9 @@ h2 {
     width: 250px;  
 }
 
-.tenant .inputBox input::after {
-    content: "Full Name:";
-    display: block;
+.inputBox input[type=date] {
+    background-color: #fff;
+    color: #666;
     
 }
 
@@ -767,6 +780,7 @@ h2 {
     display: none;
     position: relative;
     margin-top: 10px;
+    width: 210px;
 }
 
 .sign-details .inputBox input {
@@ -856,11 +870,11 @@ h2 {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     width: 816px;
     transform: scale(0.5);
-    top: -50px;
+    top: -30px;
 }
 
 .pdf-file {
-    padding: 2rem 4rem 4rem;
+    padding: 1.5rem 4rem 1.5rem 4rem;
 }
 
 .pdf-file br {
@@ -881,7 +895,7 @@ h2 {
 
 .pdf-file h3 {
     font-weight: 100;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 .signiture {

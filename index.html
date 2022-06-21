@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lease Agreement Form</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 <body>
     <header >
@@ -83,9 +84,12 @@
 
                 <h3>Where is the Property Located?</h3>
                 <div class="inputBox">
-                    <input type="address" name ="" required="required" id="address">
+                    <input type="address" name ="" required="required" id="street-address">
                     <span>Street Adress:</span>
-                    <h5>Street, City, State ZIP Code</h5>
+                </div>
+                <div class="inputBox">
+                    <input type="address" name ="" required="required" id="city-state-zip">
+                    <span>City, State ZIP Code:</span>
                 </div>
             </div>
             
@@ -105,11 +109,11 @@
                     <div class="hr-card" id="individual"><img src="images/individual.png" class="images"><h3>Individual</h3></div>
                     <div class="hr-card" id="corporation"><img src="images/office-building.png" class="images"><h3>Corporation</h3></div>
                     <div class="inputBox">
-                        <input type="address" name ="" required="required">
+                        <input type="text" name ="" required="required" id="landlord-fullname">
                             <span>Full Name:</span>
-                        <input type="phone" required="required">
+                        <input type="tel" required="required" id="landlord-phonenumber">
                             <span>Phone:</span>
-                        <input type="email" required="required">
+                        <input type="email" required="required" id="landlord-emailaddress">
                             <span>Email:</span>
                     </div>
                     <div class="property-btn">
@@ -126,43 +130,50 @@
             <div class="container">
                 <h1>Tenant Information</h1>
                 <main class="tenant-box">
+                    <h3 id="first-tenant">Tenant</h3>
+                    <div class="tenant" >
+                        <div class="inputBox">  
+                            <input type="text" name ="" required="required" id="tenant-one-fullname">
+                            <span class="left">Full Name:</span>
+                        </div>
+                        <div class="inputBox">  
+                            <input type="date" name ="" required="required" id="tenant-birthday">
+                            <span class=""></span>
+                        </div>
+                        <div class="inputBox">  
+                            <input type="tel" name ="" required="required" id="tenant-phone">
+                            <span class="right">Phone:</span>
+                        </div>
+                        <div class="inputBox">  
+                            <input type="email" name ="" required="required" id="tenant-email">
+                            <span class="right">Email:</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tenant-two">
+                        <h3 id="second-tenant">Second Tenant</h3>
                     <div class="tenant">
-                        <div class="tenant-one"> 
-                            <h3 id="first-tenant">Tenant</h3>
-                        </div>
                         <div class="inputBox">  
-                            <input type="address" name ="" required="required">
+                            <input type="text" name ="" required="required" id="tenant-two-fullname">
                             <span class="left">Full Name:</span>
                         </div>
                         <div class="inputBox">  
-                            <input type="address" name ="" required="required">
+                            <input type="date" name ="" required="required" id="tenant-two-birthday">
+                            <span class=""></span>
+                        </div>
+                        <div class="inputBox">  
+                            <input type="tel" name ="" required="required" id="tenant-two-phone">
                             <span class="right">Phone:</span>
                         </div>
                         <div class="inputBox">  
-                            <input type="address" name ="" required="required">
+                            <input type="email" name ="" required="required" id="tenant-two-email">
                             <span class="right">Email:</span>
                         </div>
                     </div>
-
-                    <div class="tenant" id="tenant-two">
-                        <div class="tenant-one"> 
-                            <h3 id="second-tenant">Tenant</h3>
-                        </div>
-                        <div class="inputBox">  
-                            <input type="address" name ="" required="required">
-                            <span class="left">Full Name:</span>
-                        </div>
-                        <div class="inputBox">  
-                            <input type="address" name ="" required="required">
-                            <span class="right">Phone:</span>
-                        </div>
-                        <div class="inputBox">  
-                            <input type="address" name ="" required="required">
-                            <span class="right">Email:</span>
-                        </div>
                     </div>
+                    
 
-                    <button class="add-tenant"><a href="#"><h4>+ Add another Tenant</h4></a></button>
+                    <button class="add-tenant" id="add-tenant"><a href="#"><h4>+ Add another Tenant</h4></a></button>
                     <button class="add-tenant" id="delete-tenant"><a href="#"><h4>- Remove Tenant</h4></a></button>
                     <div class="property-btn">
                         <button class="back-btn" id="tenant-back-btn">Back</button>
@@ -186,7 +197,7 @@
                 <div class="monthly-rent">
                     <h3>How much will the tenant pay per month?</h3>
                     <div class="inputBox">  
-                        <h3>$</h3><input type="address" name ="" required="required">
+                        <h3>$</h3><input type="address" name ="" required="required" id="monthly-payment">
                         <span class="right">Monthly Rent Payment:</span>
                     </div>
                 </div>
@@ -208,7 +219,7 @@
                     </div>
                     <div class="choose-day">
                         <div class="inputBox">  
-                            <input type="address" name ="" required="required">
+                            <input type="address" name ="" required="required" id="other-day-input">
                             <span class="right">What day of the month will payments be made?</span>
                         </div>
                     </div>
@@ -236,12 +247,12 @@
                         <h3>How much will the tenant pay per week?</h3>
                     </div>
                     <div class="inputBox">  
-                        <h3>$</h3><input type="address" name ="" required="required">
+                        <h3>$</h3><input type="address" name ="" required="required" id="weekly-rent">
                         <span class="right" id="rent-payment-input">Weekly Rent Payment:</span>
                     </div>
                     <div class="inputBox">  
-                        <input type="address" name ="" required="required">
-                        <span class="right" id="rent-day-input">What day of the week will payments be made?</span>
+                        <input type="address" name ="" required="required" id="rent-week-input">
+                        <span class="right">What day of the week will payments be made?</span>
                         <h5 class="example">e.g. Sunday</h5>
                     </div> 
                 </div>
@@ -263,8 +274,8 @@
             <div class="hr-card" id="unsure"><img src="images/calendar.png" alt="" class="images" ><h3>Unsure</h3></div>
             <div class="hr-card" id="fixeddate"><img src="images/fixeddate.png" alt="" class="images"><h3>Fixed Date</h3></div>
             <div class="inputBox" id="fixeddate-date">  
-            <input type="address" name ="" required="required">
-            <span class="right">Month, Day, Year</span>
+            <input type="date" name ="" required="required" id="fixed-date-date">
+            <span class="right"></span>
             </div>
         </div>
 
@@ -287,37 +298,44 @@
                 <h1>Lease Agreement</h1>
                 <br>
                 <br>
-                <br>
                 <h2 id="landlord-info">Landlord Info:</h2>
-                <h3 id="landlord-name">First Last</h3>
+                <h3 id="landlord-name">Landlord:</h3>
                 <h3 id="landlord-street-address">Street Address</h3>
                 <h3 id="landlord-city-state">City, State ZIP</h3>
-                <h3 id="landlord-phone">Phone Number</h3>
+                <h3 id="landlord-phone">Phone:</h3>
                 <h3 id="landlord-email">Email</h3>
                 <br>
                 <h2 id="tenant-info">Tenant Info:</h2>
-                <h3 id="tenant-name">First Last</h3>
-                <h3 id="tenant-street-address">Street Address</h3>
-                <h3 id="tenant-city-state">City, State ZIP</h3>
-                <h3 id="tenant-phone">Phone Number</h3>
-                <h3 id="tenant-email">Email</h3>
+                <h3 id="tenant-name">Tenant:</h3>
+                <h3 id="tenant-one-birthday">Birthday:</h3>
+                <h3 id="tenant-one-phone">Phone:</h3>
+                <h3 id="tenant-one-email">Email</h3>
+                <br>
+                <h3 class="tenant-two-name"></h3>
+                <h3 class="tenant-two-birthday"></h3>
+                <h3 class="tenant-two-phone"></h3>
+                <h3 class="tenant-two-email"></h3>
                 <br>
                 <h2>Rent:</h2>
                 <h3 id="selected-property">Renting a [property] for:</h3>
-                <h3>First Tenant</h3>
-                <h3>Second Tenant</h3>
+                <h3 id="first-tenant-pdf">First Tenant</h3>
+                <h3 id="second-tenant-pdf">Second Tenant</h3>
                 <br>
                 <h2>Period:</h2>
-                <h3>Period from: [date] - [date]</h3>
-                <h3>Amount: [amount] (includes utilities, water, and garbage)</h3>
-                <h3>Payment is due every [day] of the [time]</h3>
+                <h3 id="lease-term-pdf-info">Period from: [date] - [date]</h3>
+                <h3 id="rent-pdf-info">Amount: [amount] (includes utilities, water, and garbage)</h3>
+                <h3 id="rent-time-pdf-info">Payment is due every [day] of the [time]</h3>
                 <br>
                 <div class="signiture">
-                    <h3>Landlord</h3><h3>______________________ [sign-date]</h3>
+                    <h3 id="landlord-name-pdf">Landlord</h3><h3 class="sign-date-pdf">______________________ </h3>
                 </div>
                 <br>
                 <div class="signiture">
-                    <h3>Tenant</h3><h3>______________________ [sign-date]</h3>
+                    <h3 id="tenant-name-pdf">Tenant</h3><h3 class="sign-date-pdf">______________________ </h3>
+                </div>
+                <br>
+                <div class="signiture">
+                    <h3 id="tenant-two-name-pdf"><h3 class="sign-date-two-pdf"></h3></h3>
                 </div>
             </div>
         </div>
@@ -359,6 +377,12 @@
           console.info('Action:', e.action);
           console.info('Text:', e.text);
           console.info('Trigger:', e.trigger);
+        });
+    </script>
+    <script>
+        $( "p" ).click(function() {
+          var htmlString = $( this ).html();
+          $( this ).text( htmlString );
         });
     </script>
 </body>

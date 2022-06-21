@@ -21,7 +21,7 @@ apartment.addEventListener('click', apartmentBorderBox)
 condo.addEventListener('click', condoBorderBox)
 room.addEventListener('click', roomBorderBox)
 home.style.border = "5px solid green"
-let selectedProperty = "" 
+
 
 function homeBorderBox() {
     
@@ -55,7 +55,7 @@ function roomBorderBox() {
     room.style.border = "4px solid green"
     selectedProperty = "room"
 }
-
+ 
 
 //lease js
 const leaseEl = document.querySelector('.leaseterm')
@@ -178,20 +178,21 @@ function landlordContinue() {
 
 //tenant js
 const tenantDetails = document.querySelector('.tenant-details')
-const tenantTwo = document.querySelector('#tenant-two')
-const addTenantEl = document.querySelector('.add-tenant')
+const tenantTwo = document.querySelector('.tenant-two')
+const addTenantEl = document.querySelector('#add-tenant')
 const deleteTenantEl = document.querySelector('#delete-tenant')
 const firstTenant = document.querySelector('#first-tenant')
-const secondTenant = document.querySelector('#second-tenant')
+const secondTenant = document.querySelector('.second-tenant')
+const secondTenantEl = document.querySelector('#tenant-two')
 addTenantEl.addEventListener('click', addTenant)
 deleteTenantEl.addEventListener('click', deleteTenant)
 
 function addTenant() {
     firstTenant.innerHTML = "First Tenant"
     tenantTwo.style.display = "grid"
-    secondTenant.innerHTML = "Second Tenant"
     addTenantEl.style.display = "none"
     deleteTenantEl.style.display = "grid"
+    numberOfTenants = 2
 }
 
 function deleteTenant() {
@@ -199,6 +200,7 @@ function deleteTenant() {
     tenantTwo.style.display = "none"
     addTenantEl.style.display = "grid"
     deleteTenantEl.style.display = "none"
+    numberOfTenants = 1
 }
 
 const tenantBackBtn = document.querySelector('#tenant-back-btn')
@@ -240,7 +242,7 @@ annually.addEventListener('click', annuallyBorderBox)
 const example = document.querySelector('.example')
 
 const weeklyAmount = document.querySelector('#rent-payment-input')
-const weeklyDay = document.querySelector('#rent-day-input')
+const weeklyDay = document.querySelector('#rent-week-input')
 
 rentYes.style.border = "2px solid green"
 
@@ -250,6 +252,7 @@ function rentYesBorderBox() {
     monthlyRent.style.display = "grid"
     weeklyRent.style.display = "none"
     dayRent.style.display = "grid"
+    rentMonthly = true
 }
 
 function rentNoBorderBox() {
@@ -258,6 +261,7 @@ function rentNoBorderBox() {
     monthlyRent.style.display = "none"
     weeklyRent.style.display = "grid"
     dayRent.style.display = "none"
+    rentMonthly = false
 }
 
 const firstDay = document.querySelector('#first-day')
@@ -276,6 +280,9 @@ function firstDayBorderBox() {
     fifteenthDay.style.border = "none"
     otherDay.style.border = "none"
     chooseDay.style.display = "none"
+    otherDayInput.value = ""
+
+    rentDueDay = "first day"
 }
 
 function fifteenthDayBorderBox() {
@@ -283,13 +290,20 @@ function fifteenthDayBorderBox() {
     fifteenthDay.style.border = "4px solid green"
     otherDay.style.border = "none"
     chooseDay.style.display = "none"
+    otherDayInput.value = ""
+
+    rentDueDay = "fifteenth day"
 }
+
+const otherDayInput = document.querySelector('#other-day-input')
 
 function otherDayBorderBox() {
     firstDay.style.border = "none"
     fifteenthDay.style.border = "none"
     otherDay.style.border = "4px solid green"
     chooseDay.style.display = "grid"
+
+    rentDueDay = "other"
 }
 
 weekly.style.border = "4px solid green"
@@ -301,6 +315,10 @@ function weeklyBorderBox() {
     weeklyAmount.innerHTML = "Weekly Rent Payment:"
     weeklyDay.innerHTML = "What day of the week will payments be made?"
     example.innerHTML = "e.g. Sunday"
+    
+    otherDayInput.value = ""
+
+    rentDay = 7
 }
 
 function biweeklyBorderBox() {
@@ -310,6 +328,10 @@ function biweeklyBorderBox() {
     weeklyAmount.innerHTML = "Bi-Weekly Rent Payment:"
     weeklyDay.innerHTML = "What day of the week will payments be made?"
     example.innerHTML = "e.g. Sunday"
+
+    otherDayInput.value = ""
+
+    rentDay = 14
 }
 
 function annuallyBorderBox() {
@@ -319,6 +341,10 @@ function annuallyBorderBox() {
     weeklyAmount.innerHTML = "Yearly Rent Payment:"
     weeklyDay.innerHTML = "What day of the year will payments be made?"
     example.innerHTML = "e.g. January 1st"
+
+    otherDayInput.value = ""
+
+    rentDay = 365
 }
 
 const rentBackBtn = document.querySelector('#rent-back-btn')
@@ -345,6 +371,7 @@ const unsure = document.querySelector('#unsure')
 const fixeddate = document.querySelector('#fixeddate')
 const fixeddateDate = document.querySelector('#fixeddate-date')
 unsure.style.border = "4px solid green"
+const dateFixedDate = document.querySelector('#fixed-date-date')
 
 unsure.addEventListener('click', unsureBorderBox)
 fixeddate.addEventListener('click', fixeddateBorderBox)
@@ -353,6 +380,7 @@ function unsureBorderBox() {
     unsure.style.border = "4px solid green"
     fixeddate.style.border = "none"
     fixeddateDate.style.display = "none"
+    dateFixedDate.value = ""
 }
 
 function fixeddateBorderBox() {
@@ -376,6 +404,8 @@ function signContinue() {
     signDetails.style.display = "none"
     pdfDetails.style.display = "grid"
     elem.style.width = 100 + '%'
+
+    editPdf()
 }
 
 //pdf js
@@ -489,10 +519,95 @@ function listPdf() {
 
 //pdf edit
 
+let numberOfTenants = 1
+let selectedProperty = "home"
+let rentMonthly = true
+let rentDay = 0
+rentDueDay = "first day"
+
 const propertySelected = document.querySelector('#selected-property')
+const streetAdress = document.querySelector('#street-address')
 
 function editPdf() {
-    propertySelected.innerHTML = "Renting a " + selectedProperty + " for: "
+    //landlord info
+    
+    if($('#landlord-fullname').val()){
+        $('#landlord-name').html($('#landlord-fullname').val())
+    }
+    if($('#street-address').val()){
+        $('#landlord-street-address').html($('#street-address').val())
+    }
+    if($('#city-state-zip').val()){
+        $('#landlord-city-state').html($('#city-state-zip').val())
+    }
+    if($('#landlord-phonenumber').val()){
+        $('#landlord-phone').html($('#landlord-phonenumber').val())
+    }
+    $('#landlord-email').html($('#landlord-emailaddress').val())
+
+    //tenant info
+    if($('#tenant-one-fullname').val()){
+        $('#tenant-name').html($('#tenant-one-fullname').val())
+    }
+    $('#tenant-one-birthday').html($('#tenant-birthday').val())
+    $('#tenant-one-phone').html($('#tenant-phone').val())
+    $('#tenant-one-email').html($('#tenant-email').val())
+
+    //tenant two
+    if($('#tenant-two-fullname').val()){
+        $('.tenant-two-name').html($('#tenant-two-fullname').val())
+    }
+    $('.tenant-two-birthday').html($('#tenant-two-birthday').val())
+    $('.tenant-two-phone').html($('#tenant-two-phone').val())
+    $('.tenant-two-email').html($('#tenant-two-email').val())
+
+
+    //rent
+    $('#selected-property').html("Renting a " + selectedProperty + " for: ")
+    $('#first-tenant-pdf').html($('#tenant-one-fullname').val())
+    $('#second-tenant-pdf').html($('#tenant-two-fullname').val())
+    
+    //period
+    if(rentMonthly === true) {
+        $('#lease-term-pdf-info').html("Payments will be Monthly")
+        $('#rent-pdf-info').html("Amount: $" + $('#monthly-payment').val() + "(includes utilities, water, and garbage)")
+        if(rentDueDay==="other"){
+            $('#rent-time-pdf-info').html("Rent is due every " + $('#other-day-input').val())
+        }else{$('#rent-time-pdf-info').html("Rent is due every " + rentDueDay)}
+        
+    }else{
+        if(rentDay = 7){
+            $('#lease-term-pdf-info').html("Payments will be Weekly")
+            $('#rent-pdf-info').html("Amount: $" + $('#weekly-rent').val() + " (includes utilities, water, and garbage)")
+            $('#rent-time-pdf-info').html("Rent is due every " + $('#rent-week-input').val())
+        }else if(rentDay = 14){
+            $('#lease-term-pdf-info').html("Payments will be Bi-weekly")
+            $('#rent-pdf-info').html("Amount: $" + $('#weekly-rent').val() + " (includes utilities, water, and garbage)")
+            $('#rent-time-pdf-info').html("Rent is due every other " + $('#rent-week-input').val())
+        }else if(rentDay = 365){
+            $('#lease-term-pdf-info').html("Payments will be Annually")
+            $('#rent-pdf-info').html("Amount: $" + $('#weekly-rent').val() + " (includes utilities, water, and garbage)")
+            $('#rent-time-pdf-info').html("Rent is due every " + $('#rent-week-input').val())
+        }
+    }
+    
+    
+    
+
+    //signiture
+    if($('#landlord-fullname').val()){
+        $('#landlord-name-pdf').html($('#landlord-fullname').val() + " (landlord)")
+    }
+    if($('#tenant-one-fullname').val()){
+        $('#tenant-name-pdf').html($('#tenant-one-fullname').val() + " (tenant)")
+    }
+
+    $('.sign-date-pdf').html("______________________ " + $('#fixed-date-date').val())
+   
+    if(numberOfTenants === 2){
+        $('#tenant-two-name-pdf').html($('#tenant-two-fullname').val() + " (tenant)")
+        $('.sign-date-two-pdf').html("______________________ " + $('#fixed-date-date').val())
+    }
 }
 
 
